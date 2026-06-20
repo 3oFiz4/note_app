@@ -1,6 +1,11 @@
 import express from "express";
+import "./src/";
 
 const app = express();
+
+app.get("/", (request, response) => {
+  response.status(200).send("<h1>Hello Yod!</h1>");
+});
 
 app.get("/api/notes", (request, response) => {
   response.status(200).send("Hello World!");
