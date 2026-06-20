@@ -1,6 +1,7 @@
 import express from "express";
 import {
   getAllNotes,
+  getNoteById,
   createNote,
   updateNote,
   deleteNote,
@@ -9,10 +10,10 @@ import {
 const R = express.Router();
 
 R.get("/", getAllNotes);
+// R.get("/", removeAllNotes); // what the fuck?
+R.get("/:id", getNoteById);
 R.post("/", createNote);
-// localhost:5001/api/notes/(Any[int])
 R.put("/:id", updateNote);
-// localhost:5001/api/notes/(Any[int])
 R.delete("/:id", deleteNote);
 
 export default R;
